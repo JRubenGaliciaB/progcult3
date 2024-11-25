@@ -24,3 +24,8 @@ tornado==6.4.2
 truststore==0.10.0
 urllib3_secure_extra==0.1.0
 xmlrpclib==1.0.1
+matplotlib==3.5.2
+ streamlit==1.10.0
+ pandas==1.4.2
+ Pillow==9.1.1
+ numpy==1.22.4
