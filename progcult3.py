@@ -30,7 +30,9 @@ if st.sidebar.button("Agregar programa"):
             "logistica": 50,
             "alcance":1,
             "artistico":50,
-            "cohesion":50
+            "cohesion":50,
+            "zmq":0,
+            "economico":0
         })
         st.sidebar.write(f"Programa '{programa}' agregado con el color {color_programa}.")
     else:
@@ -48,26 +50,36 @@ if programa_seleccionado != "No hay programas disponibles":
     programa_seleccionado_info = next(p for p in st.session_state.programas if p['nombre'] == programa_seleccionado)
 
     # Entradas de datos para el programa seleccionado
+
+    # Subtítulo para la sección
+    st.sidebar.markdown("### Sostenibilidad")
     
     programa_seleccionado_info['beneficiarios'] = st.sidebar.slider(
         'Beneficiarios',
         min_value=0,
-        max_value=10000,
+        max_value=5000,
         value=programa_seleccionado_info['beneficiarios']
     )
 
     programa_seleccionado_info['presupuesto'] = st.sidebar.slider(
         'Presupuesto',
         min_value=0,
-        max_value=10000000,
+        max_value=8000000,
         step=10000,
         value=programa_seleccionado_info['presupuesto']
+    )
+
+    programa_seleccionado_info['economico'] = st.sidebar.slider(
+        'Desarrollo económico',
+        min_value=0,
+        max_value=1,
+        step=1,
+        value=programa_seleccionado_info['economico']
     )
     
     # Subtítulo para la sección
     st.sidebar.markdown("### Impacto Cultural")
-
-
+    
     programa_seleccionado_info['artistico'] = st.sidebar.slider(
         'Relevancia Artística',
         min_value=0,
@@ -85,18 +97,6 @@ if programa_seleccionado != "No hay programas disponibles":
     # Subtítulo para la sección
     st.sidebar.markdown("### Impacto Social")
 
-    # Estilo para cambiar el color de los sliders
-    st.markdown(
-    """
-    <style>
-    .streamlit-slider .stSlider > div:first-child {
-        background-color: #2196F3; /* Azul */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
     programa_seleccionado_info['cohesion'] = st.sidebar.slider(
         'Cohesión Social',
         min_value=0,
@@ -110,6 +110,13 @@ if programa_seleccionado != "No hay programas disponibles":
         max_value=18,
         value=programa_seleccionado_info['alcance']
     )
+
+    programa_seleccionado_info['zmq'] = st.sidebar.slider(
+        'Descentralizado',
+        min_value=0,
+        max_value=1,
+        step=1,
+        value=programa_seleccionado_info['zmq']
     
     programa_seleccionado_info['posicionamiento'] = st.sidebar.slider(
         'Posicionamiento Mediático',
