@@ -104,7 +104,7 @@ if programa_seleccionado != "No hay programas disponibles":
         value=programa_seleccionado_info['cohesion']
     )
     
-      programa_seleccionado_info['zmq'] = st.sidebar.slider(
+    programa_seleccionado_info['zmq'] = st.sidebar.slider(
         'Descentralizado',
         min_value=0,
         max_value=1,
