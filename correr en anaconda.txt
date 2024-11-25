@@ -1,0 +1,16 @@
+ruta 
+
+cd C:\Users\SECRETARIASCULT\Documents\2024\Proyectos\Indicadores\Dataviz programas\progcult3
+
+pip install streamlit
+
+pip install plotly
+
+python -m streamlit run progcult3.py
+
+
+
+generar archivo requirements:
+
+python -m pipreqs.pipreqs
+
