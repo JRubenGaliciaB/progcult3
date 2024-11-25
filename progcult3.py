@@ -27,7 +27,8 @@ if st.sidebar.button("Agregar programa"):
             "relevancia": 60,
             "presupuesto": 1000000,
             "cumplimiento": 75,
-            "logistica": 50
+            "logistica": 50,
+            "cohesion":50
         })
         st.sidebar.write(f"Programa '{programa}' agregado con el color {color_programa}.")
     else:
@@ -45,32 +46,12 @@ if programa_seleccionado != "No hay programas disponibles":
     programa_seleccionado_info = next(p for p in st.session_state.programas if p['nombre'] == programa_seleccionado)
 
     # Entradas de datos para el programa seleccionado
+    
     programa_seleccionado_info['beneficiarios'] = st.sidebar.slider(
         'Beneficiarios',
         min_value=0,
         max_value=10000,
         value=programa_seleccionado_info['beneficiarios']
-    )
-
-    programa_seleccionado_info['posicionamiento'] = st.sidebar.slider(
-        'Posicionamiento Mediático',
-        min_value=0,
-        max_value=100,
-        value=programa_seleccionado_info['posicionamiento']
-    )
-
-    programa_seleccionado_info['percepcion'] = st.sidebar.slider(
-        'Percepción de Asistentes',
-        min_value=0,
-        max_value=100,
-        value=programa_seleccionado_info['percepcion']
-    )
-
-    programa_seleccionado_info['relevancia'] = st.sidebar.slider(
-        'Relevancia Social',
-        min_value=0,
-        max_value=100,
-        value=programa_seleccionado_info['relevancia']
     )
 
     programa_seleccionado_info['presupuesto'] = st.sidebar.slider(
@@ -80,6 +61,54 @@ if programa_seleccionado != "No hay programas disponibles":
         step=10000,
         value=programa_seleccionado_info['presupuesto']
     )
+    
+    # Subtítulo para la sección
+    st.sidebar.markdown("### Impacto Cultural")
+
+    programa_seleccionado_info['percepcion'] = st.sidebar.slider(
+        'Percepción de Asistentes',
+        min_value=0,
+        max_value=100,
+        value=programa_seleccionado_info['percepcion']
+    )
+    
+    # Subtítulo para la sección
+    st.sidebar.markdown("### Impacto Cultural")
+
+    # Estilo para cambiar el color de los sliders
+    st.markdown(
+    """
+    <style>
+    .streamlit-slider .stSlider > div:first-child {
+        background-color: #2196F3; /* Azul */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
+    programa_seleccionado_info['cohesion'] = st.sidebar.slider(
+        'Cohesión Social',
+        min_value=0,
+        max_value=100,
+        value=programa_seleccionado_info['posicionamiento']
+    )
+    
+    programa_seleccionado_info['posicionamiento'] = st.sidebar.slider(
+        'Posicionamiento Mediático',
+        min_value=0,
+        max_value=100,
+        value=programa_seleccionado_info['posicionamiento']
+    )
+
+
+    programa_seleccionado_info['relevancia'] = st.sidebar.slider(
+        'Relevancia Social',
+        min_value=0,
+        max_value=100,
+        value=programa_seleccionado_info['relevancia']
+    )
+
 
     programa_seleccionado_info['cumplimiento'] = st.sidebar.slider(
         'Cumplimiento de Metas PED',
