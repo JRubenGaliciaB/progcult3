@@ -73,7 +73,7 @@ if programa_seleccionado != "No hay programas disponibles":
     )
     
     # Subtítulo para la sección
-    st.sidebar.markdown("### Impacto Cultural")
+    st.sidebar.markdown("### Impacto Social")
 
     # Estilo para cambiar el color de los sliders
     st.markdown(
@@ -85,7 +85,7 @@ if programa_seleccionado != "No hay programas disponibles":
     </style>
     """,
     unsafe_allow_html=True
-    )
+)
 
     programa_seleccionado_info['cohesion'] = st.sidebar.slider(
         'Cohesión Social',
