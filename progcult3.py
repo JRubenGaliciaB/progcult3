@@ -48,7 +48,7 @@ if programa_seleccionado != "No hay programas disponibles":
     programa_seleccionado_info['beneficiarios'] = st.sidebar.slider(
         'Beneficiarios',
         min_value=0,
-        max_value=25000,
+        max_value=10000,
         value=programa_seleccionado_info['beneficiarios']
     )
 
@@ -76,13 +76,13 @@ if programa_seleccionado != "No hay programas disponibles":
     programa_seleccionado_info['presupuesto'] = st.sidebar.slider(
         'Presupuesto',
         min_value=0,
-        max_value=30000000,
-        step=100000,
+        max_value=10000000,
+        step=10000,
         value=programa_seleccionado_info['presupuesto']
     )
 
     programa_seleccionado_info['cumplimiento'] = st.sidebar.slider(
-        'Cumplimiento de Metas',
+        'Cumplimiento de Metas PED',
         min_value=0,
         max_value=100,
         value=programa_seleccionado_info['cumplimiento']
@@ -140,7 +140,7 @@ if programa_seleccionado != "No hay programas disponibles":
     # Texto debajo de la gráfica
     st.markdown("### Evaluación de programas culturales bajo la metodología de David Roselló y su alineación al Plan Estatal de Desarrollo 2021-2027.")
     # Imagen
-    st.image('https://github.com/JRubenGaliciaB/progcult3/blob/main/progcult_2.png?raw=true', use_container_width=True)
+    st.image('https://github.com/JRubenGaliciaB/progcult3/blob/main/progcult.png', use_container_width=True)
 
 else:
     st.write("Selecciona un programa para ajustar sus parámetros.")
