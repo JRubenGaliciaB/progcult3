@@ -21,7 +21,7 @@ if st.sidebar.button("Agregar programa"):
         st.session_state.programas.append({
             "nombre": programa,
             "color": color_programa,
-            "beneficiarios": 5000,
+            "beneficiarios": 2000,
             "posicionamiento": 50,
             "percepcion": 70,
             "relevancia": 60,
@@ -88,7 +88,7 @@ if programa_seleccionado != "No hay programas disponibles":
     )
     
     programa_seleccionado_info['percepcion'] = st.sidebar.slider(
-        'Percepción de Asistentes',
+        'Percepción pública',
         min_value=0,
         max_value=100,
         value=programa_seleccionado_info['percepcion']
@@ -104,19 +104,19 @@ if programa_seleccionado != "No hay programas disponibles":
         value=programa_seleccionado_info['cohesion']
     )
     
-    programa_seleccionado_info['alcance'] = st.sidebar.slider(
-        'Presencia en Municipios',
-        min_value=0,
-        max_value=18,
-        value=programa_seleccionado_info['alcance']
-    )
-
-    programa_seleccionado_info['zmq'] = st.sidebar.slider(
+      programa_seleccionado_info['zmq'] = st.sidebar.slider(
         'Descentralizado',
         min_value=0,
         max_value=1,
         step=1,
         value=programa_seleccionado_info['zmq']
+    )
+
+    programa_seleccionado_info['alcance'] = st.sidebar.slider(
+        'Presencia en Municipios',
+        min_value=0,
+        max_value=18,
+        value=programa_seleccionado_info['alcance']
     )
     
     programa_seleccionado_info['posicionamiento'] = st.sidebar.slider(
@@ -125,7 +125,6 @@ if programa_seleccionado != "No hay programas disponibles":
         max_value=100,
         value=programa_seleccionado_info['posicionamiento']
     )
-
 
     programa_seleccionado_info['relevancia'] = st.sidebar.slider(
         'Relevancia Social',
@@ -180,7 +179,7 @@ if programa_seleccionado != "No hay programas disponibles":
             y=[impacto],
             mode='markers+text',
             text=[nombre_programa],
-            marker=dict(size=programa_info['beneficiarios'] / 500, color=color_programa),
+            marker=dict(size=programa_info['beneficiarios'] / 200, color=color_programa),
             # Tamaño proporcional a beneficiarios
             textposition='top center'
         ))
