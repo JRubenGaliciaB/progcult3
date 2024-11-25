@@ -200,6 +200,26 @@ if programa_seleccionado != "No hay programas disponibles":
     st.markdown("### Evaluación de programas culturales bajo la metodología de David Roselló y su alineación al Plan Estatal de Desarrollo 2021-2027.")
     # Imagen
     st.image('https://github.com/JRubenGaliciaB/progcult3/blob/main/progcult.png?raw=true', use_container_width=True)
+     # Texto 
+    st.markdown("### La evaluación estratégica de los proyectos culturales propone un enfoque que permite identificar su efectividad en dos dimensiones clave: impacto social y rentabilidad. Este esquema facilita la toma de decisiones respecto a su continuidad, mejora o eliminación.")
+    st.markdown("### Los Cuatro Cuadrantes
+Alta rentabilidad y gran impacto social:
+
+Descripción: Proyectos que logran optimizar recursos mientras generan transformaciones significativas en la sociedad. Ejemplo: festivales inclusivos con gran asistencia y cobertura mediática.
+Acción sugerida: Mantener y escalar. Son modelos exitosos que merecen continuidad y, en algunos casos, mayor inversión para expandir su alcance.
+Baja rentabilidad y gran impacto social:
+
+Descripción: Iniciativas que generan un impacto social significativo, pero cuya ejecución resulta costosa o ineficiente. Ejemplo: proyectos comunitarios que fortalecen identidades locales, pero dependen exclusivamente de subsidios.
+Acción sugerida: Mejorar. Identificar áreas de optimización, buscar alianzas estratégicas y explorar modelos de autofinanciamiento para hacerlos más sostenibles.
+Alta rentabilidad y poco impacto social:
+
+Descripción: Actividades económicamente viables, pero cuyo aporte cultural o social es limitado. Ejemplo: eventos comerciales con enfoques culturales superficiales.
+Acción sugerida: Valorar su continuidad. Evaluar si los recursos asignados podrían ser redirigidos hacia proyectos con mayor impacto social o si pueden reorientarse para integrar componentes de mayor relevancia cultural.
+Baja rentabilidad y poco impacto social:
+
+Descripción: Programas que ni generan beneficios económicos significativos ni cumplen con objetivos sociales claros. Ejemplo: actividades con baja asistencia, alto costo operativo y sin relevancia en la comunidad.
+Acción sugerida: Considerar su eliminación. Revisar a fondo su pertinencia; si no se justifica su existencia, redirigir los recursos hacia iniciativas más estratégicas.")
+
 
 else:
     st.write("Selecciona un programa para ajustar sus parámetros.")
