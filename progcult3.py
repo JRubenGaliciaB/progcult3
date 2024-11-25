@@ -140,7 +140,7 @@ if programa_seleccionado != "No hay programas disponibles":
     # Texto debajo de la gráfica
     st.markdown("### Evaluación de programas culturales bajo la metodología de David Roselló y su alineación al Plan Estatal de Desarrollo 2021-2027.")
     # Imagen
-    st.image('https://github.com/JRubenGaliciaB/progcult3/blob/main/progcult.png', use_container_width=True)
+    st.image('https://github.com/JRubenGaliciaB/progcult3/blob/main/progcult.png?raw=true', use_container_width=True)
 
 else:
     st.write("Selecciona un programa para ajustar sus parámetros.")
