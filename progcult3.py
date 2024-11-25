@@ -28,6 +28,8 @@ if st.sidebar.button("Agregar programa"):
             "presupuesto": 1000000,
             "cumplimiento": 75,
             "logistica": 50,
+            "alcance":1,
+            "artistico":50,
             "cohesion":50
         })
         st.sidebar.write(f"Programa '{programa}' agregado con el color {color_programa}.")
@@ -65,6 +67,14 @@ if programa_seleccionado != "No hay programas disponibles":
     # Subtítulo para la sección
     st.sidebar.markdown("### Impacto Cultural")
 
+
+    programa_seleccionado_info['artistico'] = st.sidebar.slider(
+        'Relevancia Artística',
+        min_value=0,
+        max_value=100,
+        value=programa_seleccionado_info['artistico']
+    )
+    
     programa_seleccionado_info['percepcion'] = st.sidebar.slider(
         'Percepción de Asistentes',
         min_value=0,
@@ -91,7 +101,14 @@ if programa_seleccionado != "No hay programas disponibles":
         'Cohesión Social',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['posicionamiento']
+        value=programa_seleccionado_info['cohesion']
+    )
+    
+    programa_seleccionado_info['alcance'] = st.sidebar.slider(
+        'Presencia en Municipios',
+        min_value=0,
+        max_value=18,
+        value=programa_seleccionado_info['alcance']
     )
     
     programa_seleccionado_info['posicionamiento'] = st.sidebar.slider(
@@ -110,6 +127,9 @@ if programa_seleccionado != "No hay programas disponibles":
     )
 
 
+     # Subtítulo para la sección
+    st.sidebar.markdown("### Plan Estatal de Desarrollo")
+    
     programa_seleccionado_info['cumplimiento'] = st.sidebar.slider(
         'Cumplimiento de Metas PED',
         min_value=0,
@@ -117,6 +137,9 @@ if programa_seleccionado != "No hay programas disponibles":
         value=programa_seleccionado_info['cumplimiento']
     )
 
+    # Subtítulo para la sección
+    st.sidebar.markdown("### Gestióny Operatividad")
+    
     programa_seleccionado_info['logistica'] = st.sidebar.slider(
         'Recursos Logísticos',
         min_value=0,
