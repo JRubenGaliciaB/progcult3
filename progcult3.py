@@ -117,6 +117,7 @@ if programa_seleccionado != "No hay programas disponibles":
         max_value=1,
         step=1,
         value=programa_seleccionado_info['zmq']
+    )
     
     programa_seleccionado_info['posicionamiento'] = st.sidebar.slider(
         'Posicionamiento Mediático',
