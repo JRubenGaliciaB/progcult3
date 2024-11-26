@@ -59,6 +59,7 @@ if programa_seleccionado != "No hay programas disponibles":
         min_value=0,
         max_value=5000,
         value=programa_seleccionado_info['beneficiarios']
+        help="Asistentes registrados"
     )
 
     programa_seleccionado_info['presupuesto'] = st.sidebar.slider(
