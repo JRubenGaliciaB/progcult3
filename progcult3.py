@@ -21,7 +21,7 @@ if st.sidebar.button("Agregar programa"):
         st.session_state.programas.append({
             "nombre": programa,
             "color": color_programa,
-            "beneficiarios": 2000,
+            "beneficiarios": 50,
             "posicionamiento": 50,
             "percepcion": 70,
             "relevancia": 60,
@@ -32,6 +32,7 @@ if st.sidebar.button("Agregar programa"):
             "artistico":50,
             "cohesion":50,
             "zmq":0,
+            "beneficiariosindi":2000,
             "economico":0
         })
         st.sidebar.write(f"Programa '{programa}' agregado con el color {color_programa}.")
@@ -55,11 +56,19 @@ if programa_seleccionado != "No hay programas disponibles":
     st.sidebar.markdown("### Sostenibilidad")
     
     programa_seleccionado_info['beneficiarios'] = st.sidebar.slider(
-        'Beneficiarios',
+        'Beneficiarios directos',
+        min_value=0,
+        max_value=500,
+        value=programa_seleccionado_info['beneficiarios'],
+        help="Número artistas o participantes que recibieron apoyo económico o en especie. Número de personas registradas."
+    )
+
+    programa_seleccionado_info['beneficiariosindi'] = st.sidebar.slider(
+        'Beneficiarios indirectos',
         min_value=0,
         max_value=5000,
-        value=programa_seleccionado_info['beneficiarios'],
-        help="Asistentes registrados"
+        value=programa_seleccionado_info['beneficiariosindi'],
+        help="Público asistente a un evento. Número de personas que asisten a talleres o expociones de artistas apoyados."
     )
 
     programa_seleccionado_info['presupuesto'] = st.sidebar.slider(
@@ -67,7 +76,8 @@ if programa_seleccionado != "No hay programas disponibles":
         min_value=0,
         max_value=8000000,
         step=10000,
-        value=programa_seleccionado_info['presupuesto']
+        value=programa_seleccionado_info['presupuesto'],
+        help="Presupuesto asignado."
     )
 
     programa_seleccionado_info['economico'] = st.sidebar.slider(
@@ -75,7 +85,8 @@ if programa_seleccionado != "No hay programas disponibles":
         min_value=0,
         max_value=1,
         step=1,
-        value=programa_seleccionado_info['economico']
+        value=programa_seleccionado_info['economico'],
+        help="Generación de beneficios económicos para los participantes, adicional al otorgado por la dependencia."
     )
     
     # Subtítulo para la sección
@@ -85,14 +96,16 @@ if programa_seleccionado != "No hay programas disponibles":
         'Relevancia Artística',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['artistico']
+        value=programa_seleccionado_info['artistico'],
+        help="Opiniones de críticos, curadores y especialistas sobre la originalidad, calidad técnica y contribución del proyecto al ámbito artístico."
     )
     
     programa_seleccionado_info['percepcion'] = st.sidebar.slider(
         'Percepción pública',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['percepcion']
+        value=programa_seleccionado_info['percepcion'],
+        help="Satisfacción y percepción de los asistentes sobre el proyecto mediante encuestas antes, durante y después del evento, enfocándose en la experiencia."
     )
     
     # Subtítulo para la sección
@@ -102,7 +115,8 @@ if programa_seleccionado != "No hay programas disponibles":
         'Cohesión Social',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['cohesion']
+        value=programa_seleccionado_info['cohesion'],
+        help="Identificar cambios en las dinámicas comunitarias a través de entrevistas, grupos focales o encuestas a beneficiarios. Evaluar si el proyecto fomentó la colaboración y el sentido de pertenencia."
     )
     
     programa_seleccionado_info['zmq'] = st.sidebar.slider(
@@ -110,28 +124,32 @@ if programa_seleccionado != "No hay programas disponibles":
         min_value=0,
         max_value=1,
         step=1,
-        value=programa_seleccionado_info['zmq']
+        value=programa_seleccionado_info['zmq'],
+        help="Se realiza fuera de la capital del estado."
     )
 
     programa_seleccionado_info['alcance'] = st.sidebar.slider(
         'Presencia en Municipios',
         min_value=0,
         max_value=18,
-        value=programa_seleccionado_info['alcance']
+        value=programa_seleccionado_info['alcance'],
+        help="En cuantos municipios tiene presencia."
     )
     
     programa_seleccionado_info['posicionamiento'] = st.sidebar.slider(
         'Posicionamiento Mediático',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['posicionamiento']
+        value=programa_seleccionado_info['posicionamiento'],
+        help="Menciones en medios (noticias, blogs, redes sociales), alcance (audiencia potencial) y tonalidad (positiva, neutra o negativa)."
     )
 
     programa_seleccionado_info['relevancia'] = st.sidebar.slider(
         'Relevancia Social',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['relevancia']
+        value=programa_seleccionado_info['relevancia'],
+        help="Alineamiento del proyecto con problemáticas o necesidades sociales actuales, evaluando testimonios, impacto en comunidades específicas o generación de cambios perceptibles."
     )
 
 
@@ -142,7 +160,8 @@ if programa_seleccionado != "No hay programas disponibles":
         'Cumplimiento de Metas PED',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['cumplimiento']
+        value=programa_seleccionado_info['cumplimiento'],
+        help="Alineamiento con los indicadores y retos del Plan Estatal de Desarrollo."
     )
 
     # Subtítulo para la sección
@@ -152,7 +171,8 @@ if programa_seleccionado != "No hay programas disponibles":
         'Recursos Logísticos',
         min_value=0,
         max_value=100,
-        value=programa_seleccionado_info['logistica']
+        value=programa_seleccionado_info['logistica'],
+        help="Recursos utilizados (equipos, materiales, espacios) y evaluar su eficiencia."
     )
 
     # Cálculo de métricas
