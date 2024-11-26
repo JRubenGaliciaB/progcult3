@@ -172,7 +172,7 @@ if programa_seleccionado != "No hay programas disponibles":
         min_value=0,
         max_value=100,
         value=programa_seleccionado_info['logistica'],
-        help="Recursos utilizados (equipos, materiales, espacios) y evaluar su eficiencia."
+        help="Recursos utilizados (humanos, equipos, materiales, espacios) y evaluar su eficiencia."
     )
 
     # Cálculo de métricas
