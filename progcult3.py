@@ -200,7 +200,7 @@ if programa_seleccionado != "No hay programas disponibles":
             y=[impacto],
             mode='markers+text',
             text=[nombre_programa],
-            marker=dict(size=programa_info['beneficiarios'] / 200, color=color_programa),
+            marker=dict(size=programa_info['beneficiarios'] / 20000, color=color_programa),
             # Tamaño proporcional a beneficiarios
             textposition='top center'
         ))
